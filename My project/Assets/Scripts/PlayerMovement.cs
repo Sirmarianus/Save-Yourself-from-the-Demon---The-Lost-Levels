@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     
     
     [SerializeField] private float jumpHeight;
+    //ComboAttack
+   
 
     // REFERENCES
     private CharacterController controller;
@@ -28,11 +30,13 @@ public class PlayerMovement : MonoBehaviour
     public CapsuleCollider weaponCollider;
     public ParticleSystem swordParticle;
     public Transform weaponHolder;
+    public Combo combo;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
+        combo = GetComponentInChildren<Combo>();
         weaponCollider.enabled = false;
         // swordParticle.Play();
         swordParticle.Stop();
@@ -46,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (canAttack)
             {
-                Attack();
+                combo.NormalAttack();
                 if (weaponHolder.childCount > 1)
                 {
                     swordParticle.Play();
@@ -148,4 +152,8 @@ public class PlayerMovement : MonoBehaviour
         canAttack = true;
         weaponCollider.enabled = false;
     }
+
+  
+    
+    
 }
