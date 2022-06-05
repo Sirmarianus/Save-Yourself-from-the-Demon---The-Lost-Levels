@@ -1,5 +1,6 @@
 # Save-Yourself-from-the-Demon---The-Lost-Level
 RPG game created for the university course "Computer Games".
+Code on the 'master' branch.
 
 # About the Game
 We have created this game in Unity Engine. We only used free assets and Youtube tutorial videos during production of this game. 
